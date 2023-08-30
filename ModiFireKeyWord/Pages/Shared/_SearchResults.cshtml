@@ -1,0 +1,18 @@
+﻿@model List<ModiFireKeyWord.Models.Keyword>
+
+@if (Model != null && Model.Count > 0)
+{
+    <ul>
+        @foreach (var keyword in Model)
+        {
+            <li>
+                <h3>@keyword.Name</h3>
+                <p>@keyword.Description</p>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No results found.</p>
+}

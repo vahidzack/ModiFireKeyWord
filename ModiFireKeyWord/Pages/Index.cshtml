@@ -1,0 +1,25 @@
+﻿
+@page
+@model Keyword.IndexModel
+
+@{
+    Layout = "_Layout";
+}
+
+<h1 class="text-center">C# Keyword Documentation</h1>
+
+<form method="get" class="search-form">
+    <input type="text" asp-for="SearchQuery" placeholder="Search for a keyword" class="search-input">
+    <button type="submit" class="search-button">Search</button>
+</form>
+
+<div id="searchResults" class="search-results">
+    @if (Model.SearchResults != null && Model.SearchResults.Any())
+    {
+        <partial name="_SearchResults" model="Model.SearchResults" />
+    }
+    else if (!string.IsNullOrEmpty(Model.SearchQuery))
+    {
+        <p>No results found for '@Model.SearchQuery'.</p>
+    }
+</div>

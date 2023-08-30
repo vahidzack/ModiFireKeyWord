@@ -1,0 +1,10 @@
+{
+  {
+    "compilerOptions": {
+      // Other compiler options...
+      "moduleResolution": "node",
+    }
+    // Other sections...
+  }
+
+}
